@@ -1,0 +1,15 @@
+---
+
+- name: Front end
+  hosts: server_role_frontend_server
+  remote_user: ubuntu
+  become: true
+  roles:
+    - frontend
+
+- name: Backend
+  hosts: server_role_redis_server
+  remote_user: rocky
+  become: true
+  roles:
+    - backend
